@@ -1,11 +1,12 @@
-import { createTheme } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
+import { createTheme } from '@material-ui/core/styles'
+import { red } from '@material-ui/core/colors'
 
 // Create a theme instance.
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      light: '#7D48B1',
+      main: '#663399',
     },
     secondary: {
       main: '#19857b',
@@ -13,7 +14,17 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    white: {
+      main: '#fff',
+    },
+    black: {
+      light: '#949494',
+      main: '#000',
+    },
   },
-});
+  typography: {
+    fontFamily: 'Nunito Sans, sans-serif',
+  },
+})
 
-export default theme;
+export default theme
