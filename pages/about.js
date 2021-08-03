@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 import ProTip from '../src/ProTip'
 import Link from '../src/Link'
 import Copyright from '../src/Copyright'
-import Page from '../components/Page'
+import Page from '../src/components/Page'
 
 export default function About() {
   return (
