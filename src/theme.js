@@ -25,6 +25,15 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Nunito Sans, sans-serif',
   },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          height: '100%',
+        },
+      },
+    },
+  },
 })
 
 export default theme

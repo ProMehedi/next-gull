@@ -5,7 +5,7 @@ import Meta from './Meta'
 
 // ----------------------------------------------------------------------
 
-const Page = forwardRef(({ children, title = '', ...other }, ref) => (
+const Page = forwardRef(({ children, title, ...other }, ref) => (
   <Box ref={ref} {...other}>
     <Meta title={title} />
     {children}
