@@ -13,6 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 }))
 
 const Main = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.background.light,
   flexGrow: 1,
   overflow: 'auto',
   minHeight: '100%',

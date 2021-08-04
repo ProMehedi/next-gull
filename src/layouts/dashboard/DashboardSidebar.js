@@ -7,7 +7,7 @@ const Root = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     flexShrink: 0,
     width: DRAWER_WIDTH,
-    backgroundColor: '#999',
+    backgroundColor: theme.palette.primary.main,
   },
 }))
 
