@@ -1,8 +1,9 @@
 import { alpha, AppBar, IconButton, styled, Toolbar } from '@material-ui/core'
 import { Menu as MenuIcon } from '@material-ui/icons'
+import DashboardFullScreen from './DashboardFullScreen'
 import DashboardSearchBox from './DashboardSearchBox'
 
-const DRAWER_WIDTH = 280
+const DRAWER_WIDTH = 120
 const APPBAR_MOBILE = 64
 const APPBAR_DESKTOP = 92
 
@@ -28,13 +29,11 @@ const DashboardNavbar = () => {
   return (
     <Root>
       <AppToolbar>
-        <IconButton
-          onClick={console.log('Clicked!')}
-          sx={{ mr: 3, color: 'text.primary' }}
-        >
+        <IconButton sx={{ mr: 3, color: 'text.primary' }}>
           <MenuIcon color='primary' />
         </IconButton>
         <DashboardSearchBox />
+        <DashboardFullScreen />
       </AppToolbar>
     </Root>
   )

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { styled } from '@material-ui/core'
 
-const DRAWER_WIDTH = 280
+const DRAWER_WIDTH = 120
 
 const Root = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
