@@ -1,6 +1,14 @@
-import { alpha, AppBar, IconButton, styled, Toolbar } from '@material-ui/core'
+import {
+  alpha,
+  AppBar,
+  Box,
+  IconButton,
+  styled,
+  Toolbar,
+} from '@material-ui/core'
 import { Menu as MenuIcon } from '@material-ui/icons'
 import DashboardFullScreen from './DashboardFullScreen'
+import DashboardNotifations from './DashboardNotifations'
 import DashboardSearchBox from './DashboardSearchBox'
 
 const DRAWER_WIDTH = 120
@@ -25,15 +33,24 @@ const AppToolbar = styled(Toolbar)(({ theme }) => ({
   },
 }))
 
+const AppBox = styled(Box)(({ theme }) => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'flex-end',
+}))
+
 const DashboardNavbar = () => {
   return (
     <Root>
       <AppToolbar>
-        <IconButton sx={{ mr: 3, color: 'text.primary' }}>
+        <IconButton size='large' sx={{ mr: 3 }}>
           <MenuIcon color='primary' />
         </IconButton>
         <DashboardSearchBox />
-        <DashboardFullScreen />
+        <AppBox sx={{ ml: 3 }}>
+          <DashboardFullScreen />
+          <DashboardNotifations />
+        </AppBox>
       </AppToolbar>
     </Root>
   )
