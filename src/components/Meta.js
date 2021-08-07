@@ -18,7 +18,7 @@ const Meta = ({
       <meta name='description' content={desc} />
       <meta name='keywords' content={keywords} />
       <meta name='robots' content={robots} />
-      <meta http-equiv='Content-Type' content={contentType} />
+      <meta httpEquiv='Content-Type' content={contentType} />
       <meta name='language' content={language} />
       <meta name='author' content={author} />
 

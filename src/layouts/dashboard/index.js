@@ -1,7 +1,7 @@
 import { styled } from '@material-ui/core'
 import { useState } from 'react'
 import DashboardNavbar from './DashboardNavbar'
-import DashboardSidebar from './DashboardSidebar'
+import DashboardDrawer from './DashboardDrawer'
 
 const APP_BAR_MOBILE = 64
 const APP_BAR_DESKTOP = 92
@@ -32,7 +32,7 @@ const Dashboard = ({ children }) => {
   return (
     <RootStyle>
       <DashboardNavbar onOpenSidebar={() => setOpen(false)} />
-      <DashboardSidebar
+      <DashboardDrawer
         isOpenSidebar={open}
         onCloseSidebar={() => setOpen(false)}
       />

@@ -17,7 +17,7 @@ const User = styled(Avatar)(({ theme }) => ({
 const DashboardUser = () => {
   return (
     <Root>
-      <User src='images/avatar_default.jpg' alt='photoURL' />
+      <User src='images/avatar_1.jpg' alt='photoURL' />
     </Root>
   )
 }
