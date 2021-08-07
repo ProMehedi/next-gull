@@ -10,6 +10,7 @@ import { Menu as MenuIcon } from '@material-ui/icons'
 import DashboardFullScreen from './DashboardFullScreen'
 import DashboardNotifations from './DashboardNotifations'
 import DashboardSearchBox from './DashboardSearchBox'
+import DashboardUser from './DashboardUser'
 
 const DRAWER_WIDTH = 120
 const APPBAR_MOBILE = 64
@@ -37,6 +38,7 @@ const AppBox = styled(Box)(({ theme }) => ({
   width: '100%',
   display: 'flex',
   justifyContent: 'flex-end',
+  alignItems: 'center',
 }))
 
 const DashboardNavbar = () => {
@@ -50,6 +52,7 @@ const DashboardNavbar = () => {
         <AppBox sx={{ ml: 3 }}>
           <DashboardFullScreen />
           <DashboardNotifations />
+          <DashboardUser />
         </AppBox>
       </AppToolbar>
     </Root>

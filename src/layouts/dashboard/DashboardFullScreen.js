@@ -3,7 +3,7 @@ import { Fullscreen } from '@material-ui/icons'
 
 const DashboardFullScreen = () => {
   return (
-    <IconButton size='large' sx={{ mr: 2 }}>
+    <IconButton sx={{ mr: 1, width: 45, height: 45 }}>
       <Fullscreen color='primary' />
     </IconButton>
   )
