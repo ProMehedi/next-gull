@@ -1,12 +1,13 @@
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
+import DashboardChartIcon from '../src/icons/DashboardChartIcon'
 
 const menuItems = [
   {
     id: 1,
     title: 'Dashboard',
     path: '/',
-    icon: <InboxIcon />,
+    icon: <DashboardChartIcon />,
   },
   {
     id: 2,
