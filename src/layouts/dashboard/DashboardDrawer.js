@@ -14,6 +14,7 @@ import theme from '../../theme'
 import Logo from '../../components/Logo'
 import Link from '../../components/Link'
 import { useRouter } from 'next/router'
+import MenuItem from '../../components/MenuItem'
 
 const DRAWER_WIDTH = 120
 
@@ -39,22 +40,6 @@ const Menu = styled(List)(({ theme }) => ({
   paddingTop: 0,
 }))
 
-const MenuItem = styled(ListItem)(({ theme }) => ({
-  flexDirection: 'column',
-  justifyContent: 'center',
-  borderRadius: theme.shape.borderRadius,
-  marginBottom: theme.spacing(1),
-  ':hover': {
-    backgroundColor: theme.palette.primary.light,
-  },
-}))
-
-const MenuItemIcon = styled(ListItemIcon)(({ theme }) => ({
-  color: theme.palette.white.main,
-  minWidth: 'unset',
-  marginBottom: theme.spacing(0.5),
-}))
-
 const DashboardDrawer = ({ isOpenSidebar, onCloseSidebar }) => {
   let isActive
   const router = useRouter()
@@ -68,28 +53,7 @@ const DashboardDrawer = ({ isOpenSidebar, onCloseSidebar }) => {
         {menuItems.map((item) => (
           <div key={item.id}>
             {(isActive = router.pathname === item.path)}
-            <MenuItem
-              button
-              component={Link}
-              href={item.path}
-              style={{
-                backgroundColor: isActive && theme.palette.primary.light,
-              }}
-            >
-              <>
-                <MenuItemIcon>{item.icon}</MenuItemIcon>
-                <ListItemText
-                  secondary={
-                    <Typography
-                      variant='body2'
-                      color={theme.palette.white.main}
-                    >
-                      {item.title}
-                    </Typography>
-                  }
-                />
-              </>
-            </MenuItem>
+            <MenuItem item={item} isActive={isActive} />
           </div>
         ))}
       </Menu>
