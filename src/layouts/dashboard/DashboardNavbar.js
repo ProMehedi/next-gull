@@ -36,8 +36,8 @@ const AppToolbar = styled(Toolbar)(({ theme }) => ({
   },
 }))
 
-const AppBox = styled(Box)(({ theme }) => ({
-  width: '100%',
+const AppBox = styled(Box)(() => ({
+  flex: 1,
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
@@ -47,11 +47,16 @@ const DashboardNavbar = ({ isOpen, onOpenSidebar }) => {
   return (
     <Root style={{ width: !isOpen && '100%' }}>
       <AppToolbar>
-        <IconButton onClick={onOpenSidebar} size='large' sx={{ mr: 3 }}>
+        <IconButton
+          onClick={onOpenSidebar}
+          size='large'
+          sx={{ mr: 1 }}
+          lg={{ mr: 3 }}
+        >
           <MenuIcon color='primary' />
         </IconButton>
         <DashboardSearchBox />
-        <AppBox sx={{ ml: 3 }}>
+        <AppBox sx={{ ml: 1 }} lg={{ ml: 3 }}>
           <DashboardFullScreen />
           <DashboardNotifations />
           <DashboardUser />
