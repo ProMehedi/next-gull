@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {
   ListItem,
   ListItemIcon,
@@ -53,6 +54,11 @@ const MenuItem = ({ item, isActive }) => {
       </>
     </Root>
   )
+}
+
+MenuItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  isActive: PropTypes.bool,
 }
 
 export default MenuItem

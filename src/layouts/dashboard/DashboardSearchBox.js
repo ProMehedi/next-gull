@@ -36,6 +36,7 @@ const DashboardSearchBox = () => {
         fullWidth
         disableUnderline
         placeholder='Search…'
+        autoFocus={false}
         startAdornment={
           <InputAdornment position='start'>
             <SearchIcon />

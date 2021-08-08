@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 const Meta = ({
@@ -50,6 +51,18 @@ Meta.defaultProps = {
   robots: 'index, follow',
   charSet: 'utf-8',
   contentType: 'text/html',
+}
+
+Meta.prototype = {
+  title: PropTypes.string,
+  favicon: PropTypes.string,
+  desc: PropTypes.string,
+  keywords: PropTypes.string,
+  language: PropTypes.string,
+  author: PropTypes.string,
+  robots: PropTypes.string,
+  charSet: PropTypes.string,
+  contentType: PropTypes.string,
 }
 
 export default Meta

@@ -78,10 +78,9 @@ const StatsCard = ({ title, icon, desc, variant }) => {
 
 StatsCard.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.object.isRequired,
+  icon: PropTypes.object,
   desc: PropTypes.string.isRequired,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning'])
-    .isRequired,
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning']),
 }
 
 export default StatsCard

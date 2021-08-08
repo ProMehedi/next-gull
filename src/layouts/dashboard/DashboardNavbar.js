@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {
   alpha,
   AppBar,
@@ -58,6 +59,11 @@ const DashboardNavbar = ({ isOpen, onOpenSidebar }) => {
       </AppToolbar>
     </Root>
   )
+}
+
+DashboardNavbar.propTypes = {
+  isOpen: PropTypes.bool,
+  onOpenSidebar: PropTypes.func,
 }
 
 export default DashboardNavbar
