@@ -28,3 +28,5 @@ const stats = [
     variant: 'warning',
   },
 ]
+
+export default stats
