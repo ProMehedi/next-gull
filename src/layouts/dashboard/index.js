@@ -1,7 +1,8 @@
 import { styled } from '@material-ui/core'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DashboardNavbar from './DashboardNavbar'
 import DashboardDrawer from './DashboardDrawer'
+import useWindowSize from '../../hooks/useWindowSize'
 
 const APP_BAR_MOBILE = 64
 const APP_BAR_DESKTOP = 92
@@ -31,10 +32,23 @@ const Main = styled('div')(({ theme }) => ({
 const Dashboard = ({ children }) => {
   const [open, setOpen] = useState(true)
 
+  const size = useWindowSize()
+
+  useEffect(() => {
+    if (size.width < 1200) {
+      setOpen(false)
+    } else {
+      setOpen(true)
+    }
+  }, [size])
+
   return (
     <RootStyle>
-      <DashboardNavbar onOpenSidebar={() => setOpen(!open)} />
-      <DashboardDrawer isOpenSidebar={open} />
+      <DashboardNavbar isOpen={open} onOpenSidebar={() => setOpen(!open)} />
+      <DashboardDrawer
+        isOpenSidebar={open}
+        onCloseSidebar={() => setOpen(false)}
+      />
       <Main>{children}</Main>
     </RootStyle>
   )

@@ -5,13 +5,13 @@ import Logo from '../../components/Logo'
 import Link from '../../components/Link'
 import { useRouter } from 'next/router'
 import MenuItem from '../../components/MenuItem'
-import { useEffect } from 'react'
+import useWindowSize from '../../hooks/useWindowSize'
+import MHidden from '../../components/@material-extend/MHidden'
 
 const DRAWER_WIDTH = 120
 
 const Root = styled(Drawer)(({ theme }) => ({
   transition: 'all 0.3s',
-  backgroundColor: theme.palette.primary.main,
   '.MuiPaper-root': {
     width: DRAWER_WIDTH,
     backgroundColor: theme.palette.primary.main,
@@ -33,31 +33,53 @@ const Menu = styled(List)(({ theme }) => ({
 }))
 
 const DashboardDrawer = ({ isOpenSidebar, onCloseSidebar }) => {
-  useEffect(() => {
-    console.log(isOpenSidebar)
-  }, [isOpenSidebar])
-
-  let isActive
   const router = useRouter()
+  let isActive
 
   return (
-    <Root
-      open={isOpenSidebar}
-      variant='persistent'
-      style={{ width: !isOpenSidebar && 0 }}
-    >
-      <LogoRoot component={Link} href='/'>
-        <Logo />
-      </LogoRoot>
-      <Menu>
-        {menuItems.map((item) => (
-          <div key={item.id}>
-            {(isActive = router.pathname === item.path)}
-            <MenuItem item={item} isActive={isActive} />
-          </div>
-        ))}
-      </Menu>
-    </Root>
+    <>
+      {/* For Learge Devices */}
+      <MHidden width='lgDown'>
+        <Root
+          open={isOpenSidebar}
+          variant='persistent'
+          style={{ width: !isOpenSidebar && 0 }}
+        >
+          <LogoRoot component={Link} href='/'>
+            <Logo />
+          </LogoRoot>
+          <Menu>
+            {menuItems.map((item) => (
+              <div key={item.id}>
+                {(isActive = router.pathname === item.path)}
+                <MenuItem item={item} isActive={isActive} />
+              </div>
+            ))}
+          </Menu>
+        </Root>
+      </MHidden>
+
+      {/* For Small Devices */}
+      <MHidden width='lgUp'>
+        <Root
+          open={isOpenSidebar}
+          onClose={onCloseSidebar}
+          style={{ width: !isOpenSidebar && 0 }}
+        >
+          <LogoRoot component={Link} href='/'>
+            <Logo />
+          </LogoRoot>
+          <Menu>
+            {menuItems.map((item) => (
+              <div key={item.id}>
+                {(isActive = router.pathname === item.path)}
+                <MenuItem item={item} isActive={isActive} />
+              </div>
+            ))}
+          </Menu>
+        </Root>
+      </MHidden>
+    </>
   )
 }
 

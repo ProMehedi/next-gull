@@ -21,6 +21,7 @@ const Root = styled(AppBar)(({ theme }) => ({
   backdropFilter: 'blur(6px)',
   WebkitBackdropFilter: 'blur(6px)',
   backgroundColor: alpha(theme.palette.background.light, 0.72),
+  transition: 'width 0.3s',
   [theme.breakpoints.up('lg')]: {
     width: `calc(100% - ${DRAWER_WIDTH}px)`,
   },
@@ -41,9 +42,9 @@ const AppBox = styled(Box)(({ theme }) => ({
   alignItems: 'center',
 }))
 
-const DashboardNavbar = ({ onOpenSidebar }) => {
+const DashboardNavbar = ({ isOpen, onOpenSidebar }) => {
   return (
-    <Root>
+    <Root style={{ width: !isOpen && '100%' }}>
       <AppToolbar>
         <IconButton onClick={onOpenSidebar} size='large' sx={{ mr: 3 }}>
           <MenuIcon color='primary' />
