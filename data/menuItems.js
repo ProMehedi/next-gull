@@ -43,9 +43,9 @@ const menuItems = [
   },
   {
     id: 8,
-    title: 'Table',
-    path: '/table',
-    icon: <img src={'icons/table.svg'} />,
+    title: 'Products',
+    path: '/products',
+    icon: <img src={'icons/product.svg'} />,
   },
   {
     id: 9,
