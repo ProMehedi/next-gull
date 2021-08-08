@@ -4,7 +4,7 @@ import DashboardLayout from '../src/layouts/dashboard'
 const Profile = () => {
   return (
     <DashboardLayout>
-      <Page>This is Profile Page</Page>
+      <Page title='Profile - NextGull'>This is Profile Page</Page>
     </DashboardLayout>
   )
 }

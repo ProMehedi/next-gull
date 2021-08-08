@@ -4,7 +4,7 @@ import DashboardLayout from '../src/layouts/dashboard'
 const Clouds = () => {
   return (
     <DashboardLayout>
-      <Page>This is Clouds Page</Page>
+      <Page title='Clouds - NextGull'>This is Clouds Page</Page>
     </DashboardLayout>
   )
 }
