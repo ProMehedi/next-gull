@@ -33,11 +33,8 @@ const Dashboard = ({ children }) => {
 
   return (
     <RootStyle>
-      <DashboardNavbar onOpenSidebar={() => setOpen(false)} />
-      <DashboardDrawer
-        isOpenSidebar={open}
-        onCloseSidebar={() => setOpen(false)}
-      />
+      <DashboardNavbar onOpenSidebar={() => setOpen(!open)} />
+      <DashboardDrawer isOpenSidebar={open} />
       <Main>{children}</Main>
     </RootStyle>
   )

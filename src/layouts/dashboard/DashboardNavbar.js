@@ -41,11 +41,11 @@ const AppBox = styled(Box)(({ theme }) => ({
   alignItems: 'center',
 }))
 
-const DashboardNavbar = () => {
+const DashboardNavbar = ({ onOpenSidebar }) => {
   return (
     <Root>
       <AppToolbar>
-        <IconButton size='large' sx={{ mr: 3 }}>
+        <IconButton onClick={onOpenSidebar} size='large' sx={{ mr: 3 }}>
           <MenuIcon color='primary' />
         </IconButton>
         <DashboardSearchBox />
