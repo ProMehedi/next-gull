@@ -5,11 +5,11 @@ import ProTip from '../src/ProTip'
 import Link from '../src/components/Link'
 import Copyright from '../src/Copyright'
 import Page from '../src/components/Page'
-import Dashboard from '../src/layouts/dashboard'
+import DashboardLayout from '../src/layouts/dashboard'
 
 export default function Index() {
   return (
-    <Dashboard>
+    <DashboardLayout>
       <Page>
         <Container maxWidth='sm'>
           <Box sx={{ my: 4 }}>
@@ -24,6 +24,6 @@ export default function Index() {
           </Box>
         </Container>
       </Page>
-    </Dashboard>
+    </DashboardLayout>
   )
 }

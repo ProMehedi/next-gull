@@ -1,16 +1,6 @@
 import PropTypes from 'prop-types'
-import {
-  Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  styled,
-  Typography,
-} from '@material-ui/core'
+import { Box, Drawer, List, styled } from '@material-ui/core'
 import menuItems from '../../../data/menuItems'
-import theme from '../../theme'
 import Logo from '../../components/Logo'
 import Link from '../../components/Link'
 import { useRouter } from 'next/router'
