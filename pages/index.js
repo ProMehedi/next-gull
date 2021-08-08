@@ -8,12 +8,18 @@ import Page from '../src/components/Page'
 import DashboardLayout from '../src/layouts/dashboard'
 import Card from '../src/components/Card'
 import StatsCard from '../src/components/StatsCard'
+import { Add } from '@material-ui/icons'
 
 export default function Index() {
   return (
     <DashboardLayout>
       <Page>
-        <StatsCard />
+        <StatsCard
+          variant='primary'
+          title='Title Here'
+          desc='2500'
+          icon={<Add />}
+        />
         <Card>
           <Container maxWidth='sm'>
             <Box sx={{ my: 4 }}>
