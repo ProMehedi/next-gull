@@ -10,7 +10,7 @@ export default function Index() {
       <Page>
         <Grid container>
           {stats.map((item) => (
-            <Grid item xs={3} key={item.id}>
+            <Grid item md={4} lg={3} xs={6} key={item.id}>
               <StatsCard
                 variant={item.variant}
                 title={item.title}

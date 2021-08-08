@@ -31,7 +31,7 @@ const Desc = styled(Typography)(({ theme }) => ({
   lineHeight: '1.25em',
 }))
 
-const StatsCard = ({ title, icon, desc, variant = 'primary' }) => {
+const StatsCard = ({ title, icon, desc, variant }) => {
   let textColor
   let iconColor
   let bgColor
@@ -78,8 +78,10 @@ const StatsCard = ({ title, icon, desc, variant = 'primary' }) => {
 
 StatsCard.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
   desc: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning'])
+    .isRequired,
 }
 
 export default StatsCard
