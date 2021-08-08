@@ -3,12 +3,11 @@ import { styled, Typography } from '@material-ui/core'
 import Card from './Card'
 import { amber, blue, deepPurple, green, grey } from '@material-ui/core/colors'
 
-const Wrapper = styled('div')(({ theme }) => ({
+const Wrapper = styled('div')(() => ({
   display: 'flex',
   alignItems: 'center',
 }))
 
-const Inner = styled('div')(({ theme }) => ({}))
 const Icon = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   alignItems: 'center',
@@ -21,7 +20,7 @@ const Icon = styled('div')(({ theme }) => ({
   marginRight: theme.spacing(1),
   minHeight: 60,
 }))
-const Title = styled(Typography)(({ theme }) => ({
+const Title = styled(Typography)(() => ({
   margin: 0,
   fontWeight: 'normal',
 }))
@@ -29,6 +28,9 @@ const Desc = styled(Typography)(({ theme }) => ({
   fontSize: '1.875em',
   fontWeight: 700,
   lineHeight: '1.25em',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '1.5em',
+  },
 }))
 
 const StatsCard = ({ title, icon, desc, variant }) => {
@@ -65,12 +67,12 @@ const StatsCard = ({ title, icon, desc, variant }) => {
             {icon}
           </Icon>
         )}
-        <Inner>
+        <div>
           <Title variant='body2' as='h4'>
             {title}
           </Title>
           <Desc color={textColor}>{desc}</Desc>
-        </Inner>
+        </div>
       </Wrapper>
     </Card>
   )
