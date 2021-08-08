@@ -41,13 +41,15 @@ const MenuItem = ({ item, isActive }) => {
     >
       <>
         <MenuItemIcon>{item.icon}</MenuItemIcon>
-        <MenuItemText
-          secondary={
-            <Typography variant='body2' color={theme.palette.white.main}>
-              {item.title}
-            </Typography>
-          }
-        />
+        {isActive && (
+          <MenuItemText
+            secondary={
+              <Typography variant='body2' color={theme.palette.white.main}>
+                {item.title}
+              </Typography>
+            }
+          />
+        )}
       </>
     </Root>
   )
